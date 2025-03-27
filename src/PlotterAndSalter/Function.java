@@ -22,6 +22,7 @@ public class Function {
 					String temp = toEvaluate.substring(lastLeftIndex, i+1);
 					toEvaluate = toEvaluate.replaceAll("\\Q"+temp+"\\E", evaluateExponents(temp));
 					foundAllRight = false;
+					break;
 				}
 			}
 		}

@@ -11,7 +11,6 @@ public class Smoother {
 		}
 		for (int i = 0; i < newCoords.size(); i++) {
 			ArrayList<Double> tempYs = new ArrayList<Double>();
-			int k = 0;
 			for (int j = (Math.max(0, i-windowValue)); j < Math.min(newCoords.size(), i+windowValue); j++) {
 				if (useNewCoords) {
 					tempYs.add(newCoords.get(j).getY());

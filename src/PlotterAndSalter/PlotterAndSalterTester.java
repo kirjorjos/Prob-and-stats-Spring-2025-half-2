@@ -8,7 +8,7 @@ public class PlotterAndSalterTester {
 		Function function = Plotter.getFunction("(x^3)+(x^2)+3x+1");
 		ArrayList<Coordinate> initialCoords = Plotter.graphFunction(function, -50, 50);
 		ArrayList<Coordinate> saltedCoords = Salter.salt(initialCoords, 10);
-		ArrayList<Coordinate> smoothedCoords = Smoother.smooth(saltedCoords, 5);
+		ArrayList<Coordinate> smoothedCoords = Smoother.smooth(saltedCoords, 5, true);
 		System.out.println("Initial Coords: " + initialCoords);
 		System.out.println("Salted Coords: " + saltedCoords);
 		System.out.println("Smothed Coords: " + smoothedCoords);

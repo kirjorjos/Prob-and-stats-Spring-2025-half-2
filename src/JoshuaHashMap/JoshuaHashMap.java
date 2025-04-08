@@ -32,6 +32,12 @@ public class JoshuaHashMap<E> {
 		return data;
 	}
 	
+	/**
+	 * Resize the internal array
+	 * @param data The array to resize
+	 * @param newSize The new size of the array
+	 * @return The new array
+	 */
 	private LinkedList<E>[] resize(LinkedList<E>[] data, int newSize) {
 		LinkedList<E>[] temp = data;
 		data = (LinkedList<E>[]) new LinkedList<?>[newSize];

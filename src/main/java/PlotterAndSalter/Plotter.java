@@ -1,6 +1,6 @@
 package PlotterAndSalter;
 
-import java.util.ArrayList;
+import org.jfree.data.xy.XYSeries;
 
 public class Plotter {
 	
@@ -9,10 +9,10 @@ public class Plotter {
 		return function;
 	}
 	
-	public static ArrayList<Coordinate> graphFunction(Function function, int minX, int maxX) {
-		ArrayList<Coordinate> coords = new ArrayList<Coordinate>();
+	public static XYSeries graphFunction(Function function, int minX, int maxX) {
+		XYSeries coords = new XYSeries(function.toString());
 		for (int i = 0; i < (maxX-minX); i++) {
-			coords.add(new Coordinate(minX++, function.run(i)));
+			coords.add(minX++, function.run(i));
 		}
 		return coords;
 	}

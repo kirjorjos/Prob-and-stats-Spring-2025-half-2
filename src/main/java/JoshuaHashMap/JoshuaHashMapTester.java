@@ -1,5 +1,7 @@
-package src.JoshuaHashMap;
+package JoshuaHashMap;
+
 import java.util.LinkedList;
+
 
 public class JoshuaHashMapTester {
 	public static void main(String[] args) {

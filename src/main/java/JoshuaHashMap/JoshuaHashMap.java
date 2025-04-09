@@ -1,4 +1,4 @@
-package src.JoshuaHashMap;
+package JoshuaHashMap;
 import java.util.LinkedList;
 
 public class JoshuaHashMap<E> {

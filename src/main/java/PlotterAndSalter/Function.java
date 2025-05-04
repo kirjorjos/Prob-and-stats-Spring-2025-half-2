@@ -3,11 +3,20 @@ package PlotterAndSalter;
 public class Function {
 	
 	private String function;
-	
+	/**
+	 * A polynomial function
+	 * @param func The string representing the function
+	 */
 	public Function(String func) {
 		function = func;
 	}
 	
+	/**
+	 * Run the function with the given input
+	 * Split it into parts based on parentheses and pass the parts to the exponent method
+	 * @param x The input to run the function with
+	 * @return The value the function returned
+	 */
 	public double run(double x) {
 		String toEvaluate = function.replaceAll("(\\d)(?<!\\*)x", "$1*x");
 		toEvaluate = toEvaluate.replaceAll("x", Double.toString(x));
@@ -29,6 +38,11 @@ public class Function {
 		return Double.parseDouble(evaluateExponents(toEvaluate));
 	}
 
+	/**
+	 * Evaluate the exponents in the function and call the multiplication and division method
+	 * @param equation The sub equation as a string
+	 * @return The sub equation's value
+	 */
 	private String evaluateExponents(String equation) {
 		equation = equation.replace("(", "").replace(")", "");
 		char[] chars = equation.toCharArray();
@@ -64,6 +78,11 @@ public class Function {
 		return doMultiplicationAndDivison(equation);
 	}
 
+	/**
+	 * Complete the multiplication and division in the sub equation and pass the parts to the addition and subtraction method
+	 * @param equation
+	 * @return The sub equation's value
+	 */
 	private String doMultiplicationAndDivison(String equation) {
 		if (equation.matches("-?\\d+(\\.\\d+)?")) return equation;
 		String[] parts = equation.split("[+-]");
@@ -80,6 +99,11 @@ public class Function {
 		return doAdditionAndSubtraction(equation);
 	}
 
+	/**
+	 * Do the addition and subtraction in the sub equation
+	 * @param equation The sub equation as a string
+	 * @return The sub equation's value
+	 */
 	private String doAdditionAndSubtraction(String equation) {
 		String[] parts = equation.split("(?<!\\d)-|\\+");
 		String[] operations = equation.split("(?<![\\d.])-?\\d+(\\.\\d+)?");

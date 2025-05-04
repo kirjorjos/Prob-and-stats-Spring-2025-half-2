@@ -9,6 +9,12 @@ public class Salter {
 	
 	static Random rand = new Random();
 	
+	/**
+	 * Salt the input coordinates
+	 * @param coords The coordinates to salt
+	 * @param saltingRange The maximum amount to add or subtract from the data when salting
+	 * @return The salted data
+	 */
 	public static XYSeries salt(XYSeries coords, double saltingRange) {
 		XYSeries newCoords = new XYSeries("Salted");
 		for (Object element : coords.getItems()) {

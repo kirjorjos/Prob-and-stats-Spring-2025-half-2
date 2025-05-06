@@ -39,5 +39,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/Prob and stats Spring 2025 Half 1"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

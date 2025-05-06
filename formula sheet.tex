@@ -1,0 +1,246 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Formula Sheet}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\section{Definition 3.11}
+Poisson probability distribution of random variable $Y$:
+\[
+P(Y = y) = \frac{\lambda^y e^{-\lambda}}{y!}
+\]
+
+\section{Theorem 3.11}
+Expected value of Poisson distribution:
+\[
+E(Y) = \mu = \lambda
+\]
+Variance of Poisson distribution:
+\[
+V(Y) = \sigma^2 = \lambda
+\]
+
+\section{Theorem 3.14}
+Tchebysheff's Theorem for random variable $Y$, mean $\mu$, and variance $\sigma^2$. For any constant $k > 0$:
+\[
+P(|Y - \mu| < k\sigma) \geq 1 - \frac{1}{k^2}
+\]
+or
+\[
+P(|Y - \mu| \geq k\sigma) \leq \frac{1}{k^2}
+\]
+
+\section{Definition 4.1}
+Distribution function of $Y$ (any random variable):
+\[
+F(y) = P(Y \leq y) \quad \text{for all } -\infty < y < \infty
+\]
+
+\section{Theorem 4.1}
+Properties of a distribution function:
+\begin{enumerate}
+  \item $F(-\infty) \equiv \lim\limits_{y \to -\infty} F(y) = 0$
+  \item $F(\infty) \equiv \lim\limits_{y \to \infty} F(y) = 1$
+  \item $F(y)$ is a nondecreasing function of $y$.
+\end{enumerate}
+
+\section{Definition 4.2}
+If $F(y)$ is continuous on $-\infty < y < \infty$, $Y$ is a continuous random variable.
+
+\section{Theorem 4.2}
+Properties of a density function $f(y)$:
+\begin{enumerate}
+  \item $f(y) \geq 0 \quad \text{for all } -\infty < y < \infty$
+  \item $\int_{-\infty}^{\infty} f(y)\,dy = 1$
+\end{enumerate}
+
+\section{Definition 4.3}
+Probability density function of $Y$:
+\[
+f(y) = \frac{dF(y)}{dy} = F'(y)
+\]
+
+\section{Theorem 4.3}
+If $Y$ has a density function $f(y)$ and bounds $a < b$, the probability that $Y$ is on interval $[a, b]$:
+\[
+P(a \leq Y \leq b) = \int_a^b f(y)\,dy
+\]
+
+\section{Theorem 4.4}
+Expected value of a function $g(Y)$ of a continuous random variable $Y$:
+\[
+E[g(Y)] = \int_{-\infty}^{\infty} g(y) f(y)\,dy
+\]
+
+\section{Definition 4.5}
+Expected value of continuous random variable $Y$:
+\[
+E(Y) = \int_{-\infty}^{\infty} y f(y)\,dy
+\]
+
+\section{Theorem 4.5}
+Let $c$ be a constant and $g(Y), g_1(Y), \ldots, g_k(Y)$ be functions of $Y$:
+\begin{enumerate}
+  \item $E(c) = c$
+  \item $E(cg(Y)) = cE[g(Y)]$
+  \item $E(g_1(Y) + g_2(Y) + \cdots + g_k(Y)) = E[g_1(Y)] + E[g_2(Y)] + \cdots + E[g_k(Y)]$
+\end{enumerate}
+
+\section{Definition 4.6}
+$Y$ has a continuous uniform probability distribution if its density function is:
+\[
+f(y) = \begin{cases} \frac{1}{\theta_2 - \theta_1}, & \theta_1 \leq y \leq \theta_2 \\ 0, & \text{elsewhere} \end{cases}
+\]
+
+\section{Theorem 4.6}
+If $\theta_1 < \theta_2$ and $Y$ is uniformly distributed on $(\theta_1, \theta_2)$, then:
+\begin{enumerate}
+  \item $E(Y) = \mu = \frac{\theta_1 + \theta_2}{2}$
+  \item $V(Y) = \sigma^2 = \frac{(\theta_2 - \theta_1)^2}{12}$
+\end{enumerate}
+
+
+\section{Theorem 4.7}
+Expected value of normally distributed random variable $Y$:
+\[
+E(Y) = \mu
+\]
+Variance of normally distributed random variable $Y$:
+\[
+V(Y) = \sigma^2
+\]
+\section{Definition 4.8}
+$Y$ has a normal probability distribution if its density function is:
+\[
+f(y) = \frac{1}{\sigma\sqrt{2\pi}} e^{-(y-\mu)^2/(2\sigma^2)} \quad \text{when } \sigma > 0, -\infty < \mu < \infty, \text{ and } -\infty < y < \infty
+\]
+
+\section{Theorem 4.8}
+Expected value of gamma distributed random variable $Y$:
+\[
+E(Y) = \mu = \alpha\beta
+\]
+Variance of gamma distributed random variable $Y$:
+\[
+V(Y) = \sigma^2 = \alpha\beta^2
+\]
+
+\section{Definition 4.9}
+$Y$ has a gamma distribution with parameters $\alpha > 0$ and $\beta > 0$ if the density function is:
+\[
+f(y) = \begin{cases} \frac{y^{\alpha-1} e^{-y/\beta}}{\beta^\alpha \Gamma(\alpha)}, & 0 \leq y < \infty \\ 0, & \text{elsewhere} \end{cases}
+\]
+where $\Gamma(\alpha) = \int_0^{\infty} t^{\alpha-1} e^{-t}\,dt$.
+
+\section{Theorem 4.10}
+Expected value of exponentially distributed random variable $Y$:
+\[
+E(Y) = \mu = \beta
+\]
+Variance of exponentially distributed random variable $Y$:
+\[
+V(Y) = \sigma^2 = \beta^2
+\]
+
+\section{Definition 4.11}
+$Y$ has an exponential distribution with parameter $\beta > 0$ if the density function is:
+\[
+f(y) = \begin{cases} \frac{1}{\beta} e^{-y/\beta}, & 0 \leq y < \infty \\ 0, & \text{elsewhere} \end{cases}
+\]
+
+
+\section{Definition 5.1}
+Joint probability function of $Y_1$ and $Y_2$:
+\[
+p(y_1, y_2) = P(Y_1 = y_1, Y_2 = y_2) \quad \text{when } -\infty < y_1, y_2 < \infty
+\]
+
+\section{Theorem 5.1}
+If $Y_1$ and $Y_2$ have a joint probability function, then:
+\begin{enumerate}
+  \item $p(y_1, y_2) \geq 0$
+  \item $\sum_{y_1, y_2} p(y_1, y_2) = 1$
+\end{enumerate}
+
+\section{Definition 5.2}
+Joint distribution function of $Y_1$ and $Y_2$:
+\[
+F(y_1, y_2) = P(Y_1 \leq y_1, Y_2 \leq y_2) \quad \text{when } -\infty < y_1, y_2 < \infty
+\]
+
+
+\section{Theorem 5.2}
+If $Y_1$ and $Y_2$ have a joint distribution function, then:
+\begin{enumerate}
+  \item $F(-\infty, -\infty) = F(-\infty, y_2) = F(y_1, -\infty) = 0$
+  \item $F(\infty, \infty) = 1$
+  \item $f(y_1, y_2) \geq 0$
+  \item $\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(y_1, y_2) \, dy_1 \, dy_2 = 1$
+\end{enumerate}
+
+
+\section{Definition 5.3}
+Jointly continuous random variables $Y_1$ and $Y_2$:
+\[
+F(y_1, y_2) = \int_{-\infty}^{y_1} \int_{-\infty}^{y_2} f(t_1, t_2) \, dt_2 \, dt_1
+\]
+
+\section{Definition 5.4}
+Marginal probability function of $Y_1$ and $Y_2$:
+\[
+p_1(y_1) = \sum_{\text{all } y_2} p(y_1, y_2) \quad \text{and} \quad p_2(y_2) = \sum_{\text{all } y_1} p(y_1, y_2)
+\]
+Marginal density function of $Y_1$ and $Y_2$:
+\[
+f_1(y_1) = \int_{-\infty}^{\infty} f(y_1, y_2) \, dy_2 \quad \text{and} \quad f_2(y_2) = \int_{-\infty}^{\infty} f(y_1, y_2) \, dy_1
+\]
+
+\section{Theorem 5.4}
+Marginal probability variables $Y_1$ and $Y_2$ are independent if and only if:
+\[
+p(y_1, y_2) = p_1(y_1)p_2(y_2) \quad \text{for every } (y_1, y_2)
+\]
+Otherwise, $Y_1$ and $Y_2$ are dependent.
+
+Marginal density variables $Y_1$ and $Y_2$ are independent if and only if:
+\[
+f(y_1, y_2) = f_1(y_1)f_2(y_2) \quad \text{for every } (y_1, y_2)
+\]
+Otherwise, $Y_1$ and $Y_2$ are dependent.
+
+
+\section{Definition 5.5}
+Conditional discrete probability function of $Y_1$ and $Y_2$:
+\[
+p(y_1|y_2) = \frac{p(y_1, y_2)}{p_2(y_2)} \quad \text{when } p_2(y_2) > 0
+\]
+
+\section{Definition 5.6}
+Conditional distribution function of $Y_1$ and $Y_2$:
+\[
+F(y_1|y_2) = P(Y_1 \leq y_1 | Y_2 = y_2)
+\]
+
+\section{Definition 5.7}
+Conditional density of $Y_1$ given $Y_2 = y_2$:
+\[
+f(y_1|y_2) = \frac{f(y_1, y_2)}{f_2(y_2)}
+\]
+Conditional density of $Y_2$ given $Y_1 = y_1$:
+\[
+f(y_2|y_1) = \frac{f(y_1, y_2)}{f_1(y_1)}
+\]
+
+\section{Definition 5.8}
+Joint distribution variables $Y_1$ and $Y_2$ are independent if and only if:
+\[
+F(y_1, y_2) = F_1(y_1)F_2(y_2) \quad \text{for every } (y_1, y_2)
+\]
+Otherwise, $Y_1$ and $Y_2$ are dependent.
+
+\end{document}
